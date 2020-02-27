@@ -1,0 +1,125 @@
+@import "./base.scss";
+
+:root {
+  /* animations */
+  --softIn: softIn 618ms ease-in;
+}
+
+@keyframes softIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* set default base size for deveice and reading distance */
+/* mobile */
+html {
+  font-size: 16px;
+  font-family: $fontStackSans;
+}
+
+/* tablet */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1080px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: $white;
+}
+
+* {
+  box-sizing: border-box;
+  /* ask mobile browsers to please trust our judgement about font sizes */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-size: 2.075rem;
+}
+
+h2 {
+  font-size: 1.725rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.33;
+  font-family: $fontStackSans;
+  color: $black;
+}
+
+p {
+  font-family: $fontStackSans;
+  color: $black;
+  margin: $margin;
+}
+
+a {
+  text-decoration: none;
+  // color: var(--green);
+}
+
+ul {
+  font-family: $fontStackSans;
+  list-style-type: none;
+}
+
+blockquote {
+  font-family: $fontStackSans;
+  color: $black;
+}
+
+cite {
+  font-family: $fontStackSans;
+  font-size: 0.66rem;
+  font-weight: normal;
+  color: $black;
+}
+
+label {
+  font-family: $fontStackSans;
+}

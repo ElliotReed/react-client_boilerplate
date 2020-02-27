@@ -1,0 +1,7 @@
+@import "../../../base";
+
+.form {
+  & input {
+    color: $primary
+  }
+}

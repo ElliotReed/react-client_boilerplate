@@ -1,0 +1,37 @@
+@import "../../base.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  @include boxShadow;
+  @include paddingBox;
+}
+
+.buttonLogoContainer {
+  display: flex;
+}
+
+.menuButton {
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.mainNav {
+  display: none;
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}
+
+.navUserContainer {
+  display: flex;
+}
+
+.logoWrapper {
+  margin: $margin;
+}

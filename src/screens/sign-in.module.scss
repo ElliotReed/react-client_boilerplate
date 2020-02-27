@@ -1,0 +1,17 @@
+@import "../base.scss";
+
+.page {
+  display: flex;
+  min-height: 100%;
+
+  & form {
+    max-width: 50rem;
+    padding: $padding;
+
+    & input {
+      width: 100%;
+      margin-bottom: $margin;
+      @include paddingBox;
+    }
+  }
+}

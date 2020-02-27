@@ -1,0 +1,56 @@
+@import "../../base.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navVerticle {
+  // placehoder
+  display: block;
+}
+
+.link,
+.linkVerticle {
+  margin: 0;
+  padding: 0;
+
+  & li {
+    & a {
+      padding: $padding * 0.38;
+      overflow: hidden;
+      font-weight: 600;
+      color: $primary;
+    }
+
+    & a:hover {
+      cursor: pointer;
+      border-bottom: 3px solid $primary;
+    }
+  }
+}
+
+.link {
+  & li {
+    display: inline-block;
+    margin: 0 $margin;
+  }
+}
+
+.linkVerticle {
+  margin: $margin;
+
+  & li {
+    display: block;
+    margin: $margin 0;
+
+    & a {
+      margin: $margin;
+    }
+  }
+}
+
+.active {
+  border-bottom: 3px solid $primary;
+}

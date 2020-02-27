@@ -1,0 +1,16 @@
+@import "../base.scss";
+
+.container {
+  margin: $margin;
+}
+
+.link {
+  display: block;
+  background-color: #bbbbbb;
+  padding: calc(#{$padding} * .618) $padding;
+}
+
+.text {
+  background-color: red;
+  color: white;
+}

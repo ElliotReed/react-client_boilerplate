@@ -1,0 +1,14 @@
+@import "../../base.scss";
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  & h1 {
+    margin: 0 $margin;
+    font-size: 1.16rem;
+    @media screen and (min-width: $tablet) {
+      margin: 0;
+    }
+  }
+}

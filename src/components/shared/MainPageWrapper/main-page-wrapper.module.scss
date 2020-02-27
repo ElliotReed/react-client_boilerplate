@@ -1,0 +1,12 @@
+@import "../../../base";
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  & main {
+    min-height: 100%;
+    overflow-y: auto;
+  }
+}
