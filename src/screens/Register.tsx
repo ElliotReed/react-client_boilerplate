@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import { useRegisterMutation } from '../generated/graphql';
 
-import './Register.scss';
+import styles from './register.module.scss';
+
+import Form from 'components/shared/Form';
+
+const FormFooter = () => {
+	return (
+		<div className={styles.footer}>
+			<div>Already have an account?</div>
+			<div>
+				<Link to="/signin">sign in</Link>
+			</div>
+		</div>
+	);
+};
 
 export const Register: React.FC<RouteComponentProps> = ({ history }) => {
 	const [name, setName] = useState('');
@@ -10,22 +23,22 @@ export const Register: React.FC<RouteComponentProps> = ({ history }) => {
 	const [password, setPassword] = useState<string>('');
 	const [register] = useRegisterMutation();
 
+	const handleSubmit = async (e: React.SyntheticEvent) => {
+		e.preventDefault();
+		const response = await register({
+			variables: {
+				name,
+				email,
+				password,
+			},
+		});
+		console.log(response);
+		history.push('/');
+	};
+
 	return (
-		<form
-			onSubmit={async e => {
-				e.preventDefault();
-				const response = await register({
-					variables: {
-						name,
-						email,
-						password,
-					},
-				});
-				console.log(response);
-				history.push('/');
-			}}
-		>
-			<div>
+		<div className={styles.page}>
+			<Form title="Create Account" text="create account" handleSubmit={handleSubmit} footer={<FormFooter />}>
 				<input
 					value={name}
 					placeholder="name"
@@ -33,8 +46,6 @@ export const Register: React.FC<RouteComponentProps> = ({ history }) => {
 						setName(e.target.value);
 					}}
 				/>
-			</div>
-			<div>
 				<input
 					value={email}
 					placeholder="email"
@@ -42,8 +53,6 @@ export const Register: React.FC<RouteComponentProps> = ({ history }) => {
 						setEmail(e.target.value);
 					}}
 				/>
-			</div>
-			<div>
 				<input
 					type="password"
 					value={password}
@@ -52,8 +61,7 @@ export const Register: React.FC<RouteComponentProps> = ({ history }) => {
 						setPassword(e.target.value);
 					}}
 				/>
-			</div>
-			<button type="submit">register</button>
-		</form>
+			</Form>
+		</div>
 	);
 };

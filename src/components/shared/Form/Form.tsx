@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 
 import styles from './form.module.scss';
 
+import Button from 'components/shared/Button';
+
 type FormProps = {
 	handleSubmit: (e: React.SyntheticEvent) => void;
 	title: string;
@@ -15,7 +17,7 @@ const Form: React.FC<FormProps> = ({ handleSubmit, title, text, children, footer
 		<form className={styles.form} onSubmit={e => handleSubmit(e)}>
 			<h3>{title}</h3>
 			{children}
-			<button type="submit">{text}</button>
+			<Button>{text}</Button>
 			{footer}
 		</form>
 	);

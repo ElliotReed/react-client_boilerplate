@@ -1,6 +1,17 @@
 @import "../../../base";
 
 .button {
-  overflow: hidden;
+  border: $border;
+  border-radius: $borderRadius;
+  margin: $margin 0;
+  @include paddingBox;
+  @include gradient($primary);
+  color: $white;
+
+
+&:hover {
+  background: darken($primary, 38);
+  cursor: pointer;
+}
 
 }

@@ -1,7 +1,15 @@
 @import "../../../base";
 
 .form {
+  & h3 {
+    text-transform: capitalize;
+  }
   & input {
-    color: $primary
+    color: $black;
+    // outline: $primary solid .062rem;
+    &:focus {
+      outline: none;
+      box-shadow: 1px 1px 1px $primary, -1px -1px 1px $primary;
+    }
   }
 }

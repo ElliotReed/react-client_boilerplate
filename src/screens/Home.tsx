@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { useUsersQuery } from '../generated/graphql';
 
-import styles from './Home.module.scss';
+import styles from './home.module.scss';
 
 interface Props {}
 
